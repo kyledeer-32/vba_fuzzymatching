@@ -1,5 +1,5 @@
 # **vba_fuzzymatching**
-=========================
+
 ## **Introduction:**
 -------------------------
 These VBA functions enable Excel users to execute fuzzy matching by using the basic algorithm for computing the **Levenshtein Distance** between two strings. Additionally, string similarity can be calculated between strings as a method of determining how strong matches are.
@@ -27,5 +27,6 @@ Visual Basic Editor for Excel
 ## **References**
 -------------------------
 Levenshtein Distance Formula: https://en.wikipedia.org/wiki/Levenshtein_distance?msclkid=154f886daafe11ec82b22174e1344ccf
+
 Basic string similarity formula: http://adamfortuno.com/index.php/2021/07/05/levenshtein-distance-and-distance-similarity-functions/?msclkid=aa598709a8b611ec8de2ac84df81a9da
 
