@@ -10,7 +10,7 @@ These VBA functions enable Excel users to execute fuzzy matching by using the ba
 Calculates the Levenshtein Distance between two strings. The Levenshtein Distance is the minimum number of character insertions, deletions, and substitutions required to perfectly match one string to another. This formula isn't case sensitive.
 
 ### =Fuzzy_Match([String 1],[Array of Strings]) 
-Traverses an array of strings, calculating the Levenshtein Distance between each and [String 1] (String 1 is the string you are seeking the closest match for in the [Array of Strings]. Returns the closest match, i.e., the string with the lowest Levenshtein Distance. If two or more strings have lowest Levenshtein distance, the first one traversed in the [Array of Strings] will be returned.
+Traverses an array of strings, calculating the Levenshtein Distance between each item (string) in the [Array of Strings] and [String 1] (String 1 is the string you are seeking the closest match for). Returns the closest match, i.e., the string with the lowest Levenshtein Distance. If two or more strings have lowest Levenshtein distance, the first one traversed in the [Array of Strings] will be returned.
 
 ### =String_Similarity([String 1],[String 2])
 Calculates the similarity percentage between two strings using the Levenshtein Distance, e.g., "rock" and "sock" are 75% similiar, because 3 of their 4 characters are the same.
