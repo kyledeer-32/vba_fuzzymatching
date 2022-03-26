@@ -92,15 +92,16 @@ Public Function Fuzzy_Match(ByRef targetS As String, ByRef MatchRange As Range) 
                 GoTo Skip_Add
             End If
             
-            S2 = MatchArray(x, y)
-            EditD = LevD(targetS, S2)
-            EditDistance_Dict.Add MatchArray(x, y), EditD
-            
-            'Start Debugging
-            'Debug.Print test; ": x = "; x; "   y = "; y; " MatchArray Value = "; MatchArray(x, y); " S2 = "; S2; "targetS = "; targetS
-            'Debug.Print "Edit Distance = "; EditD
-            'test = test + 1
-            'End Debugging
+
+'Begin Change
+
+
+
+
+
+'End change
+
+
 
 Skip_Add:
 
