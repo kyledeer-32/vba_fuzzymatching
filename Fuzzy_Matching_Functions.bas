@@ -95,7 +95,32 @@ Public Function Fuzzy_Match(ByRef targetS As String, ByRef MatchRange As Range) 
 
 'Begin Change
 
+            S2 = MatchArray(x, y)
+            
+            If InStr(S2, " ") > 0 Then
+                Dim SplitStr() As String
+                SplitStr = Split(S2)
 
+                Dim n As Long
+
+                For n = 0 To UBound(SplitStr)
+                    Dim S3 As String
+                    S3 = SplitStr(n)
+
+                    Dim EditD2 As Long
+                    EditD2 = LevD(S3, targetS)
+
+                    Dim ED2_Dict As Object
+                    Set ED2_Dict = New Scripting.Dictionary
+                    ED2_Dict.Add S3, EditD2
+
+                    Dim SS2 As Long
+                    SS2 = String_Similarity(S3, targetS)
+
+                    Dim SS2_Dict As Object
+                    Set SS2_Dict = New Scripting.Dictionary
+                    SS2_Dict.Add S3, SS2
+                Next n
 
 
 
@@ -140,3 +165,56 @@ Public Function String_Similarity(ByRef Str1 As String, ByRef Str2 As String)
     String_Similarity = (100 - (LevenDist / WorksheetFunction.Max(Len(Str1), Len(Str2)) * 100)) / 100
         
 End Function
+
+Public Function Count_MaxorMin(SeekType As Integer, ByRef arr() As Long) As Integer
+'This function finds the min or max number in an array, and then calculates how many duplicates of the max/min value there are, if any.
+'e.g., if the min value of an array is 2, and there are three 2 values, then this function would return 3
+
+'1 for first argument: minimum values
+'2 for first argument: maximum values
+
+    If SeekType < 1 Or SeekType > 2 Then
+        MsgBox ("First argument must be either 1 (min values) or 2 (max values)")
+        GoTo Fin
+    End If
+
+    If SeekType = 1 Then
+        Dim minvalue As Long
+        keyvalue = Application.Min(arr())
+        
+        Dim x As Long
+        Dim Counter As Long
+        Counter = 0
+        
+        For x = LBound(arr()) To UBound(arr()):
+            If arr(x) = keyvalue Then
+                Counter = Counter + 1
+            End If
+        Next x
+        
+        Count_MaxorMin = Counter
+        GoTo Fin
+    
+    Else
+        Dim maxvalue As Long
+        maxvalue = Application.Max(arr())
+        
+        Dim y As Long
+        Dim Counter2 As Long
+        Counter2 = 0
+        
+        For y = LBound(arr()) To UBound(arr()):
+            If arr(y) = maxvalue Then
+                Counter2 = Counter2 + 1
+            End If
+        Next y
+        
+        Count_MaxorMin = Counter2
+    End If
+                 
+Fin:
+
+End Function
+
+
+
