@@ -220,7 +220,7 @@ End Function
  
 Public Function String_Similarity(ByRef Str1 As String, ByRef Str2 As String)
 
-'Calculate string similarity % to determine strength of mathcing words
+'Calculate string similarity % to determine strength of matching words
 'Function Source: http://adamfortuno.com/index.php/2021/07/05/levenshtein-distance-and-distance-similarity-functions/?msclkid=aa598709a8b611ec8de2ac84df81a9da
 
     Dim Similarity As Long
